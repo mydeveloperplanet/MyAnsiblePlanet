@@ -1,0 +1,4 @@
+ansible_host: 192.168.2.12
+ansible_connection: ssh
+ansible_user: osboxes
+ansible_ssh_pass: osboxes.org

@@ -1,0 +1,15 @@
+- name: Install Apache webserver
+  hosts: target1
+  become: yes
+
+  tasks:
+    - name: Install apache httpd  (state=present is optional)
+      ansible.builtin.apt:
+        name: apache2
+        update_cache: yes
+        state: present
+
+    - name: Create index page
+      ansible.builtin.copy:
+        content: 'Hello world from target 1'
+        dest: /var/www/html/index.html

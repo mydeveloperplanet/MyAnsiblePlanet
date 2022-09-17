@@ -1,0 +1,14 @@
+- name: Ping target1
+  hosts: target1
+
+  tasks:
+    - name: Ping test
+      ansible.builtin.ping:
+        data: crash
+
+- name: Ping target2
+  hosts: target2
+
+  tasks:
+    - name: Ping test
+      ansible.builtin.ping:

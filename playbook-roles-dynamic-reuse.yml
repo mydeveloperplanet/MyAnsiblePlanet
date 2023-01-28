@@ -1,0 +1,18 @@
+- name: Install Apache webserver for target1
+  hosts: target1
+  become: yes
+
+  tasks:
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "this task runs before the webservervariable role"
+
+    - name: Install Apache webserver for target1
+      include_role:
+        name: webservervariable
+      vars:
+          hello_message: 'target1'
+
+    - name: Print a message
+      ansible.builtin.debug:
+        msg: "this task runs after the webservervariable role"

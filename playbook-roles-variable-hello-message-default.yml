@@ -1,0 +1,5 @@
+- name: Install Apache webserver for all targets
+  hosts: targets
+  become: yes
+  roles:
+    - webservervariable
